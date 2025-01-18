@@ -17,7 +17,12 @@ def index_view(request):
             messages.error(request, ("پیام شما ارسال نشد!"))
             
     form = ContactForm()
-    context = {"form": form}
+    context = {
+        "form": form,
+        'meta_title': 'صفحه اصلی | تواین دیزاین',
+        'meta_description': 'تیم تواین دیزاین، طراحی وبسایت‌های تخصصی شما را به عهده می‌گیرد',
+        'meta_keywords': 'django, website, صفحه اصلی, SEO, تواین دیزاین, طراحی سایت, جنگو, twinvibedesign',
+        }
     return render(request, "website/index.html", context)
 
 # About page
@@ -29,6 +34,9 @@ def about_view(request):
     context = {
         "m_profile" : m_profile,
         "a_profile" : a_profile,
+        'meta_title': 'درباره ما | تواین دیزاین',
+        'meta_description': 'تیم تواین دیزاین، طراحی وبسایت‌های تخصصی شما را به عهده می‌گیرد',
+        'meta_keywords': 'django, website, درباره ما, SEO, تواین دیزاین, طراحی سایت, جنگو, twinvibedesign',
         }
     return render(request, "website/about.html", context)
 
@@ -49,6 +57,9 @@ def contact_view(request):
     
     form = ContactForm()
     context = {
+        'meta_title': 'ارتباط با ما | تواین دیزاین',
+        'meta_description': 'شما می‌توانید از طریق ایمیل یا شماره تماس با ما در ارتباط باشید',
+        'meta_keywords': 'django, website, ارتباط با ما, SEO, تواین دیزاین, طراحی سایت, جنگو, twinvibedesign',
         "form": form,
         "m_profile" : m_profile,
         "a_profile" : a_profile,

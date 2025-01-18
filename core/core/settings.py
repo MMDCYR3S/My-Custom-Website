@@ -11,7 +11,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
+from django.contrib.messages import constants as messages
+
+# Message tags show in forms
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +32,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vlrl)61#20p%259c@x4!y=kn870blqm)927-#uf#0^(do1dfdq'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,12 +88,35 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+        
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": config('DB_ENGINE', default="django.db.backends.postgresql"), 
+            "NAME": config('DB_NAME',default="postgres"),
+            "USER": config('DB_USER',default="postgres"),
+            "PASSWORD": config('DB_PASSWORD',default="postgres"),
+            "HOST": config('DB_HOST',default="127.0.0.1"),
+            "POST": config('DB_PORT',default=5432),
+        }
+    }
+
+# Email settings for website
+EMAIL_BACKEND = config("DB_EMAIL_BACKEND")
+EMAIL_HOST = config("DB_EMAIL_HOST")
+EMAIL_PORT = config("DB_EMAIL_PORT")
+EMAIL_USE_TLS = config("DB_EMAIL_TLS")
+EMAIL_HOST_USER = config("DB_EMAIL_HOST_USER")  # SMTP server username
+EMAIL_HOST_PASSWORD = config("DB_EMAIL_HOST_PASSWORD")  # SMTP server password
+EMAIL_USE_SSL = config("DB_EMAIL_USE_SSL")  # Set to True if using SSL
+DEFAULT_FROM_EMAIL = config("DB_DEFAULT_FROM_EMAIL")
 
 
 # Password validation
@@ -119,14 +153,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend')
+    os.path.join(BASE_DIR, "static")
 ]
 
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type

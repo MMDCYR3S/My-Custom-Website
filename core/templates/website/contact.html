@@ -1,8 +1,14 @@
-{% extends 'main.html' %}
+{% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/contact.css' %}" />  
 {% endblock extra_css %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+{% block keywords %}{{ meta_keywords }}{% endblock %}
+
 {% block content %}
     <!-- ========================= section 1 ====================== -->
     <div class="container">

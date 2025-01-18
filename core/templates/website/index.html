@@ -1,8 +1,14 @@
-{% extends 'main.html' %}
+{% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
   <link rel="stylesheet" href="{% static 'css/index.css' %}" />
 {% endblock %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+{% block keywords %}{{ meta_keywords }}{% endblock %}
+
 {% block content %}
   <!-- ========================= section 1 ====================== -->
   <div class="container mt-5">
@@ -10,6 +16,7 @@
       <div class="col-md col-lg mt-lg-1b fs-">
         <!-- بخش متن -->
         <h4 class="mb-4 mt-lg-0 fw-bold text-white">تواین دیزاین</h4>
+        <div class="mb-4"></div>
         <h5 class="text-primary mb-3 mb-lg-4 mt-lg-4">تواین دیزاین چیست؟</h5>
         <p class="lh-lg mb-lg-5 text-white align-text-justify">
           ما تواین دیزاین هستیم و تمرکز اصلی ما در حال حاضر بر روی طراحی وب است. 
@@ -21,23 +28,17 @@
           بهترین نحو انجام می‌دهند. طراحی انواع سایت‌های
           شخصی و شرکتی، فروشگاهی، رزومه و هر آن‌چیزی که 
           مد نظر خودتان هست را به ما بسپارید.
-          <br>
           تخصص ما در استفاده از پایتون و جنگو به ما این 
           امکان را می‌دهد که وب‌سایت‌هایی با عملکرد بالا و مقیاس‌پذیر طراحی 
-          کنیم. پایتون به عنوان یک زبان برنامه‌نویسی قدرتمند و ساده، به 
-          ما کمک می‌کند تا کدهای تمیز و قابل نگهداری بنویسیم. جنگو، به 
-          عنوان یک فریم‌ورک وب، امکانات متعددی را برای توسعه سریع و امن 
-          وب‌سایت‌ها فراهم می‌آورد. این فریم‌ورک با ویژگی‌هایی مانند مدیریت 
-          پایگاه داده، احراز هویت کاربر و امنیت بالا، به ما این امکان 
-          را می‌دهد که پروژه‌های پیچیده را به راحتی پیاده‌سازی کنیم.
+          کنیم.
           </p>
         <!-- دکمه ها -->
         <button type="button" onclick="window.location.href='{% url 'website:about' %}'" class="btn btn-outline-info me-4">اطلاعات بیشتر</button>
         <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='#contactus'">تماس با ما</button>
       </div>
       <!-- بخش تصویر -->
-      <div class="col-md col-lg-4 d-flex align-items-center mt-sm-5">
-        <img src="{% static 'pictures/ui-design-26.png' %}" alt="" class="img-fluid my-mb" />
+      <div class="col-md col-lg-4 d-flex align-items-center mt-sm-5 mb-5">
+        <img src="{% static 'pictures/picindex.jpg' %}" alt="" class="my-img img-fluid my-mb" />
       </div>
     </div>
   </div>
@@ -95,8 +96,8 @@
                   <i class="bi bi-back my-bi fs-1 mb-4 .my-card-i"></i>
                   <h5 class="card-title mb-3">FrontEnd مناسب</h5>
                   <h6 class="lh-base card-text text-muted my-text-card align-text-justify">
-                    این قسمت به زودی فعال می‌شود. ما تمام تلاشمون رو میکنیم 
-                    بهترین رو ارائه کنیم (خداوکیلی به رومون نیار) Coming Soon...
+                    این قسمت به زودی فعال می‌شود. ما تمام تلاشمون رو می‌کنیم 
+                    بهترین رو ارائه بدهیم. (خداوکیلی به رومون نیار) Coming Soon...
                   </h6>
                 </div>
               </div>
