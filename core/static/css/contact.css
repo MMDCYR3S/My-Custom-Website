@@ -114,4 +114,8 @@ a:visited {
     color: white;
 }
 
+.auto-height-input {
+    max-height: auto;
+}
+
 /* ======================== End =========================== */
