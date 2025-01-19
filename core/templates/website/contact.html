@@ -39,7 +39,7 @@
     <div class="row align-items-center text-center">
       <div class="col line"></div>
       <div class="col-3 col-lg-2 mx-auto">
-        <h3 class="text-white">راه های ارتباطی</h3>
+        <h3 class="text-white">راه‌های ارتباط</h3>
       </div>
       <div class="col line"></div>
     </div>
@@ -50,7 +50,7 @@
   <div class="container">
     <div class="row">
       <!-- بخش کارت ها -->
-      <div class="col col-md-4 my-card my-auto">
+      <div class="col col-md-4 my-card my-auto mb-2">
         <div class="row">
           <!-- کارت اول ، تصویر و متن -->
           <div class="col">
@@ -61,15 +61,55 @@
           <div class="col">
             <h1 class="text-white">آدرس ایمیل</h1>
             <p class="text-white">ارتباط با ایمیل مدیران</p>
-            <div class="mb-3 mt-3 p-3">
-              <input type="text" readonly class="form-control auto-height-input btn mb-2 btn-outline-secondary bi-envelope-at" value="{{ m_profile.user }}" onclick="copyToClipboard(this)" />
-              <input type="text" readonly class="form-control auto-height-input btn btn-outline-secondary bi-envelope-at" value="{{ a_profile.user }}" onclick="copyToClipboard(this)" />
+            <div class="mt-3 p-3">
+              <input type="text" readonly class="form-control btn mb-3 btn-outline-secondary"
+               value="{{ m_profile.user }}" onclick="copyToClipboard(this)" />
+              <input type="text" readonly class="form-control btn btn-outline-secondary"
+               value="{{ a_profile.user }}" onclick="copyToClipboard(this)" />
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col col-md-4 my-card my-auto">
+      <div class="col col-md-4 my-card my-auto mb-2">
+        <div class="row">
+          <!-- کارت شبکه‌های اجتماعی ، تصویر و متن -->
+          <div class="col">
+            <img src="{% static 'pictures/social-media.png' %}" class="card-image mt-3" alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mt-4">
+            <h1 class="text-white">شبکه‌های اجتماعی</h1>
+            <p class="text-white">با ما در شبکه‌های اجتماعی همراه باشید.</p>
+            <div class="mt-3 p-3">
+              <!-- بخش تصاویر لینک دار -->
+              <div class="row align-items-center">
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://github.com"><i class="bi bi-github fs-1"></i></a>
+                </div>
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://google.com"><i class="bi bi-globe2 fs-1"></i></a>
+                </div>
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://gmail.com"><i class="bi bi-envelope-at fs-1"></i></a>
+                </div>
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://instagram.com"><i class="bi bi-instagram fs-1"></i></a>
+                </div>
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://linkedin.com"><i class="bi bi-linkedin fs-1"></i></a>
+                </div>
+                <div class="col-2 col-md-2 text-white mx-auto my-col">
+                  <a href="https://telegram.org"><i class="bi bi-telegram fs-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-4 my-card my-auto mb-2">
         <div class="row">
           <!-- کارت دوم ، تصویر و متن -->
           <div class="col">
@@ -79,52 +119,17 @@
         <div class="row">
           <div class="col">
             <h1 class="text-white">تلفن تماس</h1>
-            <p class="text-white">شما می‌توانید با ما در تماس باشید.</p>
-            <div class="mb-3 mt-3 p-3">
-              <input type="text" readonly class="form-control btn mb-2 btn-outline-secondary bi-envelope-at" value="{{ m_profile.phone }}" onclick="copyToClipboard(this)" />
-              <input type="text" readonly class="form-control btn btn-outline-secondary bi-envelope-at" value="{{ a_profile.phone }}" onclick="copyToClipboard(this)" />
+            <p class="text-white">تماس با تلفن همراه</p>
+            <div class="mt-3 p-3">
+              <input type="text" readonly class="form-control btn mb-3 btn-outline-secondary"
+               value="{{ m_profile.phone }}" onclick="copyToClipboard(this)" />
+              <input type="text" readonly class="form-control btn btn-outline-secondary"
+               value="{{ a_profile.phone }}" onclick="copyToClipboard(this)" />
             </div>
           </div>
         </div>
       </div>
-
-      <div class="col col-md-4 my-card my-auto">
-        <div class="row">
-          <!-- کارت سوم ، تصویر و متن -->
-          <div class="col">
-            <img src="{% static 'pictures/social-media.png' %}" class="card-image mt-2" alt="" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <h1 class="text-white">شبکه‌های اجتماعی</h1>
-            <p class="text-white">با ما در شبکه‌های اجتماعی همراه باشید.</p>
-            <div class="mb-3 px-3">
-              <!-- بخش تصاویر لینک دار -->
-              <div class="row mt-1 align-items-center">
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://github.com"><i class="bi bi-github fs-1"></i></a>
-                </div>
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://google.com"><i class="bi bi-globe2 fs-1"></i></a>
-                </div>
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://gmail.com"><i class="bi bi-envelope-at fs-1"></i></a>
-                </div>
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://instagram.com"><i class="bi bi-instagram fs-1"></i></a>
-                </div>
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://linkedin.com"><i class="bi bi-linkedin fs-1"></i></a>
-                </div>
-                <div class="col-4 col-md-2 text-white mx-auto my-col">
-                  <a href="https://telegram.org"><i class="bi bi-telegram fs-1"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- پایان بخش تلفن تماس -->
     </div>
   </div>
   <!-- end section 2 -->

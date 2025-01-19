@@ -159,51 +159,56 @@
     <div class="mb-4"></div>
 
     <!-- ======================= section 4 ==================== -->
-    <div class="container ">
+    <div class="container">
 
         {% if m_profile %}
 
         <div class="row">
             <!-- مشخصات ممد-->
             <div class="col col-md-8 my-card my-card21">
-                <div class="row align-items-center">
-                    <div class="col ms-3">
+                <div class="row align-items-center mt-4">
+                    <div class="col-4 col-md-3 col-img1">
+                        <!-- تصویر کارت و مشخصات -->
+                        <img src="{{m_profile.image.url}}" class="card-image my-img mb-4" alt="" />
+                    </div>
+                    <div class="col-8 col-5">
+                        <h3 class="text-white mb-3">{{m_profile.first_name}} {{m_profile.last_name}}</h3>
+                        <p class="text-white"><span>شماره تماس : {{m_profile.phone}}</span></p>
+                    </div>
+                    <div class="col col-md-11 ms-md-5">
+                        <!-- خط جدا کننده -->
+                        <div class="col-12 line mb-3"></div>
                         <!-- بخش متنی -->
-                        <h3 class="text-white mt-2">{{m_profile.first_name}} {{m_profile.last_name}}</h3>
                         <p class="text-white align-text-justify">
                             {{m_profile.description}}
-                            <br />
-                            <br />
-                            شماره تماس : {{m_profile.phone}}
                         </p>
-                    </div>
-                    <div class="col-4 col-img1">
-                        <!-- تصویر کارت -->
-                        <img src="{{m_profile.image.url}}" class="card-image my-img" alt="" />
                     </div>
                 </div>
             </div>
         </div>
         {% endif %}
 
-        <!-- مشخصات ارشک -->
-
         {% if a_profile %}
 
         <div class="row" dir="ltr">
-            <div class="col col-md-8 my-card my-card21">
-                <div class="row align-items-center">
-                    <div class="col me-3">
-                        <h3 class="text-white mt-2">{{a_profile.first_name}} {{a_profile.last_name}}</h3>
+            <!-- مشخصات ارشک-->
+            <div class="col col-md-8 my-card my-card21" dir="rtl">
+                <div class="row align-items-center mt-4">
+                    <div class="col-4 col-md-3 col-img1">
+                        <!-- تصویر کارت و مشخصات -->
+                        <img src="{{a_profile.image.url}}" class="card-image my-img mb-4" alt="" />
+                    </div>
+                    <div class="col-8 col-5">
+                        <h3 class="text-white mb-3">{{a_profile.first_name}} {{a_profile.last_name}}</h3>
+                        <p class="text-white"><span>شماره تماس : {{a_profile.phone}}</span></p>
+                    </div>
+                    <div class="col col-md-11 ms-md-5">
+                        <!-- خط جدا کننده -->
+                        <div class="col line mb-3"></div>
+                        <!-- بخش متنی -->
                         <p class="text-white align-text-justify">
                             {{a_profile.description}}
-                            <br />
-                            <br />
-                            شماره تماس : {{a_profile.phone}}
                         </p>
-                    </div>
-                    <div class="col-4 col-img1">
-                        <img src="{{a_profile.image.url}}" class="card-image my-img" alt="" />
                     </div>
                 </div>
             </div>

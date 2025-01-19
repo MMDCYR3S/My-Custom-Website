@@ -116,6 +116,11 @@ a:visited {
 
 .auto-height-input {
     max-height: auto;
+    max-width: auto;
+}
+
+.my-img {
+    border-radius: 16rem;
 }
 
 /* ======================== End =========================== */
