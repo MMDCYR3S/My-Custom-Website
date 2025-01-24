@@ -50,7 +50,7 @@
   <!--====================== navbar ===================== -->
   <nav class="navbar navbar-expand-md bg- my-nav my-nav-shadow mb-5 mb-md-1 ">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'website:index' %}"><img src="{% static 'pictures/favicon.ico' %}" alt="" /></a>
+      <a class="navbar-brand" href="{% url 'website:index' %}"><img src="{% static 'pictures/logoindex.png' %}" alt="" /></a>
       <!-- منو همبرگری برای دیوایس های کوچک -->
       <button class="navbar-toggler white-text bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,6 +70,9 @@
           <!-- دکمه ارتباط با ما -->
           <li class="nav-item">
             <a class="nav-link my-btn-hover text-white" href="{% url 'website:contact' %}">ارتباط با ما</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link my-btn-hover text-white" href="{% url 'website:resume' %}">نمونه کار ها</a>
           </li>
           <li class="nav-item"></li>
         </ul>

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Import css file -->
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/resume.css' %}" />
+{% endblock extra_css %}
+
+<!-- Start block content -->
+{% block content %}
+    <!-- end section 1 -->
+    <!-- ====================== section 2 ========================= -->
+    <!-- خطر جداکننده-->
+    <div class="container mt-5">
+        <div class="row align-items-center text-center">
+          <div class="col line"></div>
+          <div class="col col-md-2 mx-auto">
+            <h3 class="text-white">نمونه کارها</h3>
+          </div>
+          <div class="col line"></div>
+        </div>
+      </div>
+      <div class="mb-4"></div>
+
+    <div class="container">
+        <!-- سطر اول -->
+        <div class="row">
+        {% for sample in samples %}
+            <!-- کارت‌ها -->
+            <div class="col mx-1">
+                <div class="card my-card bg-dark text-white mb-5 ">
+                    <img src="{{sample.image.url}}" class="card-img-top" alt="{{sample.title}}">
+                    <div class="card-body">
+                        <h4 class="text-primary" >{{sample.title}}</h4>
+                        <p class="card-text">{{sample.description}}</p>
+                        <h5 class="text-info">
+                            <i class="bi bi-link-45deg"></i>
+                            <a href="{{sample.link}}" class="link text-info">لینک وبسایت</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col mx-1">
+                <div class="card my-card bg-dark text-white mb-5">
+                    <div class="card-body">
+                        <h3 class="text-primary text-center" >نمونه کاری یافت نشد</h3>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+            
+<!-- Endblock for content -->
+{% endblock content %}

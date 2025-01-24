@@ -13,8 +13,8 @@
 /* ======================= button styles ======================== */
 
 .btn-outline-info {
-    color: rgb(137, 4, 64);
-    border-color: rgb(137, 4, 64);
+    color: rgb(255, 30, 70);
+    border-color: rgb(255, 30, 70);
 }
 
 .btn-outline-info:hover,
@@ -22,8 +22,8 @@
 .btn-outline-info:active,
 .btn-outline-info:focus-visible {
     color: white !important;
-    border-color: rgb(137, 4, 64) !important;
-    background-color: rgb(137, 4, 64) !important;
+    border-color: rgb(255, 30, 70) !important;
+    background-color: rgb(255, 30, 70) !important;
 }
 
 .my-btn-hover {
@@ -33,24 +33,24 @@
 
 .my-btn-hover:hover {
     transform: scaleX(1.05);
-    background-color: rgb(137, 4, 64);
+    background-color: rgb(255, 30, 70);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.22);
 }
 
 /* ======================== base styles ======================= */
 
 :root {
-    --bs-primary-rgb: 108, 7, 66 !important;
-    --bs-info-rgb: 108, 7, 66 !important;
+    --bs-primary-rgb: 255, 30, 70 !important;
+    --bs-info-rgb: 255, 30, 70 !important;
 }
 
 ::selection {
-    background-color: rgba(137, 4, 64, 0.385);
+    background-color: rgba(255, 30, 70, 0.385);
 }
 
 .line {
     height: 2px;
-    background-color: rgba(137, 4, 64, 0.385);
+    background-color: rgba(255, 30, 70, 0.385);
     border-radius: 1rem;
 }
 
@@ -62,14 +62,14 @@ body {
 /* ========================= navbar =========================== */
 
 .my-nav-shadow {
-    box-shadow: 0 0 10px rgba(137, 4, 64, 0.385);
+    box-shadow: 0 0 10px rgba(255, 30, 70, 0.385);
 }
 
 .my-bg-search,
 .my-bg-search:active,
 .my-bg-search:focus {
     background: transparent;
-    border: 1px solid rgb(137, 4, 64) !important;
+    border: 1px solid rgb(255, 30, 70) !important;
     color: white !important;
 }
 
@@ -78,9 +78,9 @@ body {
 .my-card {
     font-family: "morabaa2";
     text-align: center;
-    border: 1px solid rgb(137, 4, 64);
+    border: 1px solid rgb(255, 30, 70);
     border-radius: 0.5rem;
-    box-shadow: 0 0 10px rgba(137, 4, 64, 0.472);
+    box-shadow: 0 0 10px rgba(255, 30, 70, 0.472);
     background-color: #131218;
     margin: 16px 16px;
 }
@@ -101,13 +101,13 @@ body {
 }
 
 .bi:hover {
-    color: rgba(137, 4, 64, 0.8);
-    text-shadow: 0 0 20px rgb(137, 4, 64);
+    color: rgba(255, 30, 70, 0.8);
+    text-shadow: 0 0 20px rgb(255, 30, 70);
     font-size: 7rem;
 }
 
 a:active {
-    color: rgba(137, 4, 64, 0.8);
+    color: rgba(255, 30, 70, 0.8);
 }
 
 a:visited {

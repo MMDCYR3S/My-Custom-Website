@@ -210,18 +210,12 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
+          {% for sample in samples %}
             <!-- عکس اول -->
             <div class="carousel-item active">
-              <img src="{% static 'pictures/logoindex.png' %}" class="d-block w-100 rounded-4" alt="..." />
+              <img src="{{sample.image.url}}" class="d-block w-100 rounded-4" alt="{{sample.title}}" />
             </div>
-            <!-- عکس دوم -->
-            <div class="carousel-item">
-              <img src="{% static 'pictures/Nature HD Wallpapers 217.jpg' %}" class="d-block w-100 rounded-4" alt="..." />
-            </div>
-            <!-- عکس سوم -->
-            <div class="carousel-item">
-              <img src="{% static 'pictures/Nature HD Wallpapers 243.jpg' %}" class="d-block w-100 rounded-4" alt="..." />
-            </div>
+          {% endfor %}
           </div>
           <!-- دکمه سمت چپ عکس برای قبلی -->
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -236,7 +230,7 @@
         </div>
       </div>
       <!-- دکمه مشاهده گالری -->
-      <button class="btn btn-outline-light mt-5 py-3 px-4">نمایش وبسایت</button>
+      <button class="btn btn-outline-light mt-5 py-3 px-4" onclick="window.location.href='{% url 'website:resume' %}'">نمایش بیشتر</button>
     </div>
     <br /><br /><br />
   </section>
